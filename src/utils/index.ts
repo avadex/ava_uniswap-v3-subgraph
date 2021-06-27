@@ -11,15 +11,6 @@ export function exponentToBigDecimal(decimals: BigInt): BigDecimal {
   return bd
 }
 
-// return 0 if denominator is 0 in division
-export function safeDiv(amount0: BigDecimal, amount1: BigDecimal): BigDecimal {
-  if (amount1.equals(ZERO_BD)) {
-    return ZERO_BD
-  } else {
-    return amount0.div(amount1)
-  }
-}
-
 export function bigDecimalExponated(value: BigDecimal, power: BigInt): BigDecimal {
   if (power.equals(ZERO_BI)) {
     return ONE_BD
@@ -32,7 +23,7 @@ export function bigDecimalExponated(value: BigDecimal, power: BigInt): BigDecima
   }
 
   if (negativePower) {
-    result = safeDiv(ONE_BD, result)
+    result = ONE_BD.div(result)
   }
 
   return result
@@ -49,7 +40,7 @@ export function priceToDecimal(amount: BigDecimal, exchangeDecimals: BigInt): Bi
   if (exchangeDecimals == ZERO_BI) {
     return amount
   }
-  return safeDiv(amount, exponentToBigDecimal(exchangeDecimals))
+  return amount.div(exponentToBigDecimal(exchangeDecimals))
 }
 
 export function equalToZero(value: BigDecimal): boolean {

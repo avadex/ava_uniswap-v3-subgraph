@@ -26,8 +26,6 @@ export function handlePoolCreated(event: PoolCreated): void {
     factory.totalFeesETH = ZERO_BD
     factory.totalValueLockedETH = ZERO_BD
     factory.totalValueLockedUSD = ZERO_BD
-    factory.totalValueLockedUSDUntracked = ZERO_BD
-    factory.totalValueLockedETHUntracked = ZERO_BD
     factory.txCount = ZERO_BI
     factory.owner = ADDRESS_ZERO
 
@@ -65,7 +63,6 @@ export function handlePoolCreated(event: PoolCreated): void {
     token0.untrackedVolumeUSD = ZERO_BD
     token0.totalValueLocked = ZERO_BD
     token0.totalValueLockedUSD = ZERO_BD
-    token0.totalValueLockedUSDUntracked = ZERO_BD
     token0.txCount = ZERO_BI
     token0.poolCount = ZERO_BI
     token0.whitelistPools = []
@@ -90,7 +87,6 @@ export function handlePoolCreated(event: PoolCreated): void {
     token1.feesUSD = ZERO_BD
     token1.totalValueLocked = ZERO_BD
     token1.totalValueLockedUSD = ZERO_BD
-    token1.totalValueLockedUSDUntracked = ZERO_BD
     token1.txCount = ZERO_BI
     token1.poolCount = ZERO_BI
     token1.whitelistPools = []
@@ -117,8 +113,6 @@ export function handlePoolCreated(event: PoolCreated): void {
   pool.txCount = ZERO_BI
   pool.liquidity = ZERO_BI
   pool.sqrtPrice = ZERO_BI
-  pool.feeGrowthGlobal0X128 = ZERO_BI
-  pool.feeGrowthGlobal1X128 = ZERO_BI
   pool.token0Price = ZERO_BD
   pool.token1Price = ZERO_BD
   pool.observationIndex = ZERO_BI
@@ -126,7 +120,6 @@ export function handlePoolCreated(event: PoolCreated): void {
   pool.totalValueLockedToken1 = ZERO_BD
   pool.totalValueLockedUSD = ZERO_BD
   pool.totalValueLockedETH = ZERO_BD
-  pool.totalValueLockedUSDUntracked = ZERO_BD
   pool.volumeToken0 = ZERO_BD
   pool.volumeToken1 = ZERO_BD
   pool.volumeUSD = ZERO_BD
