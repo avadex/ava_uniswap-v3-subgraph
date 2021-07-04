@@ -5,7 +5,7 @@ import { BigDecimal, BigInt } from '@graphprotocol/graph-ts'
 import { exponentToBigDecimal, safeDiv } from '../utils/index'
 
 const WETH_ADDRESS = '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7'
-const USDT_WETH_05_POOL = '0x852767337A1a2A5d0e5b9EeEAbBDc12F882A69bC' //aeb usdt/wavax pool
+const USDT_WETH_12_POOL = '0x852767337A1a2A5d0e5b9EeEAbBDc12F882A69bC' //aeb usdt/wavax pool
 
 // token where amounts should contribute to tracked volume and liquidity
 // usually tokens that many tokens are paired with s
@@ -36,7 +36,7 @@ export function sqrtPriceX96ToTokenPrices(sqrtPriceX96: BigInt, token0: Token, t
 
 export function getEthPriceInUSD(): BigDecimal {
   // fetch eth prices for each stablecoin
-  let usdtPool = Pool.load(USDT_WETH_05_POOL) // dai is token0
+  let usdtPool = Pool.load(USDT_WETH_12_POOL) // dai is token0
   if (usdtPool !== null) {
     return usdtPool.token0Price
   } else {

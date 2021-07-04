@@ -1,4 +1,4 @@
-specVersion: 0.0.2
+specVersion: 0.0.3
 description: Uniswap is a decentralized protocol for automated token exchange on Ethereum.
 repository: https://github.com/avadex/uniswap-v3-subgraph
 schema:
@@ -37,7 +37,7 @@ dataSources:
     name: NonfungiblePositionManager
     network: avalanche
     source:
-      address: '0x48E1dDA60692caF145F4d482185C974aC9CCCE3F'
+      address: '0x7848FDcf6A02D0De10cF54E82971df634380D2a5'
       abi: NonfungiblePositionManager
       startBlock: 2429046
     mapping:
