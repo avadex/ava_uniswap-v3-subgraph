@@ -50,4 +50,5 @@ export class StaticTokenDefinition {
     // If not found, return null
     return null
   }
+
 }

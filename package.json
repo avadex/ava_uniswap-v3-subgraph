@@ -6,10 +6,10 @@
   "scripts": {
     "codegen": "graph codegen --output-dir src/types/",
     "build": "graph build",
-    "create-local": "graph create avadex/v35 --node http://127.0.0.1:8020",
-    "deploy-local": "graph deploy avadex/v35 --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
-    "deploy": "graph deploy avadex/v35 --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/ --debug",
-    "deploy-dev": "graph deploy avadex/v35 --ipfs http://35.197.14.14:5000/ --node http://35.197.14.14:8020/ --debug",
+    "create-local": "graph create avadex/v36 --node http://127.0.0.1:8020",
+    "deploy-local": "graph deploy avadex/v36 --debug --ipfs http://localhost:5001 --node http://127.0.0.1:8020",
+    "deploy": "graph deploy avadex/v36 --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/  --debug",
+    "deploy-dev": "graph deploy avadex/v36 --ipfs http://35.197.14.14:5000/ --node http://35.197.14.14:8020/ --debug",
     "deploy-staging": "graph deploy $THE_GRAPH_GITHUB_USER/$THE_GRAPH_SUBGRAPH_NAME /Avadex --ipfs https://api.staging.thegraph.com/ipfs/ --node https://api.staging.thegraph.com/deploy/",
     "watch-local": "graph deploy ianlapham/uniswap-v3 --watch --debug --node http://127.0.0.1:8020/ --ipfs http://localhost:5001"
   },
@@ -22,5 +22,6 @@
     "eslint-config-prettier": "^6.1.0",
     "prettier": "^1.18.2",
     "typescript": "^3.5.2"
-  }
+  },
+  "dependencies": {}
 }

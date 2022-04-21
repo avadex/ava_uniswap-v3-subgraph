@@ -1,7 +1,7 @@
 /* eslint-disable prefer-const */
 import { Bundle, Burn, Factory, Mint, Pool, Swap, Tick, Token } from '../types/schema'
 import { Pool as PoolABI } from '../types/Factory/Pool'
-import { BigDecimal, BigInt, ethereum, store } from '@graphprotocol/graph-ts'
+import { BigDecimal, BigInt, ethereum } from '@graphprotocol/graph-ts'
 import {
   Burn as BurnEvent,
   Flash as FlashEvent,
@@ -23,9 +23,12 @@ import {
 import { createTick, feeTierToTickSpacing } from '../utils/tick'
 
 export function handleInitialize(event: Initialize): void {
+  // update pool sqrt price and tick
   let pool = Pool.load(event.address.toHexString())
   pool.sqrtPrice = event.params.sqrtPriceX96
   pool.tick = BigInt.fromI32(event.params.tick)
+  pool.save()
+  
   // update token prices
   let token0 = Token.load(pool.token0)
   let token1 = Token.load(pool.token1)
@@ -451,6 +454,9 @@ export function handleSwap(event: SwapEvent): void {
   token1DayData.save()
   uniswapDayData.save()
   poolDayData.save()
+  token0HourData.save()
+  token1HourData.save()
+  poolHourData.save()
   factory.save()
   pool.save()
   token0.save()
